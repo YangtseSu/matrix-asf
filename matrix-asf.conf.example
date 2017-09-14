@@ -1,0 +1,12 @@
+#Get free tuling chat bot key from http://www.tuling123.com/
+[tuling]
+enable = True
+key = 
+userid = 
+
+[matrix]
+host = https://matrix.org
+username = foobar
+password = foobar
+room = #foobar:matrix.org
+admin = @foobar:matrix.org
