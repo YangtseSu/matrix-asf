@@ -102,7 +102,7 @@ def main(host, username, password, room_id_alias):
     client.start_listener_thread()
 
     while True:
-        input()
+        pass
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.WARNING)
