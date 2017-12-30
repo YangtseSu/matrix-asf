@@ -14,6 +14,7 @@ import sys
 import configparser
 import logging
 import requests
+import ASF_IPC as asf
 
 from matrix_client.client import MatrixClient
 from matrix_client.api import MatrixRequestError
@@ -31,6 +32,10 @@ admin = conf["matrix"]["admin"]
 tl_key = conf["tuling"]["key"]
 tl_userid = conf["tuling"]["userid"]
 
+ipc_host = conf["ipc"]["host"]
+ipc_port = conf["ipc"]["port"]
+ipc_password = conf["ipc"]["password"]
+
 # Get tuling response.
 def get_tl_response(msg):
     apiUrl = 'http://www.tuling123.com/openapi/api'
@@ -46,10 +51,11 @@ def get_tl_response(msg):
         return
 
 # Get asf response,the ip address and port are default settings.
+api = asf.IPC(ipc_host, int(ipc_port), ipc_password)
+
 def get_asf_response(msg):
-    ipcUrl = 'http://127.0.0.1:1242/IPC'
     try:
-        r = requests.get(ipcUrl, params={'command':msg})
+        r = api.command(msg)
         return r.text
     except:
         return

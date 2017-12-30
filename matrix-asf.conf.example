@@ -10,3 +10,8 @@ username = foobar
 password = foobar
 room = #foobar:matrix.org
 admin = @foobar:matrix.org
+
+[ipc]
+host = '127.0.0.1'
+port = 1242
+password = ''
