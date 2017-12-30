@@ -56,7 +56,7 @@ api = asf.IPC(ipc_host, int(ipc_port), ipc_password)
 def get_asf_response(msg):
     try:
         r = api.command(msg)
-        return r.text
+        return r
     except:
         return
 
